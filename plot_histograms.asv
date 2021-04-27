@@ -1,0 +1,11 @@
+function [] = plot_histograms(filename)
+    % The output from geant4 are the following
+    % Energy deposited in gap, energy deposited in absorbing material
+    % Track length gap and track length in absorbing material
+    [Egap,Eabs,Lgap,Labs] = import_data_from_ntuples(filename);
+    histogram(Egap,100);
+    
+    
+    
+
+end
