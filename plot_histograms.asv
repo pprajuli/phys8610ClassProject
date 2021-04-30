@@ -9,15 +9,12 @@ function [Egap] = plot_histograms(filename)
     figure(1);
     subplot(2,2,1);
     dn1 = 'Energy Deposited in Gap';
-    %[f,x]=histogram(Egap,100,'DisplayName',dn1);
-    [est_pdf,bins] = scale_histograms(Egap);
-    %histogram(est_pdf);
+    histogram(Egap,100,'DisplayName',dn1);
     hold on;
     fit_normal_distribution(Egap);
     
     h1 = fitdist(Egap,'normal');
-    %y = pdf(h1,f);
-    %plot(x,y)
+    y
     xlabel('Energy (MeV)');
     legend();
     grid on;
