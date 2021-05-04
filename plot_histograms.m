@@ -7,46 +7,38 @@ function [Egap] = plot_histograms(filename)
     Eabs_mean = mean(Eabs);
     
     figure(1);
-    subplot(2,2,1);
-    dn1 = 'Energy Deposited in Gap';
-    %[f,x]=histogram(Egap,100,'DisplayName',dn1);
-    [est_pdf,bins] = scale_histograms(Egap);
-    %histogram(est_pdf);
-    hold on;
-    fit_normal_distribution(Egap);
+    %subplot(2,2,1);
+    dn1 = 'Energy Deposited in Material';
+    h = histogram(Eabs,100,'DisplayName',dn1);
     
-    h1 = fitdist(Egap,'normal');
-    %y = pdf(h1,f);
-    %plot(x,y)
     xlabel('Energy (MeV)');
     legend();
     grid on;
    
-    hold off;
-    
-    subplot(2,2,2);
-     histogram(Lgap,100,'DisplayName','Gap');
-    
-    h3 = fitdist(Lgap,'normal');
-    xlabel('Track Length (cm)');
-    legend();
-    grid on;
-    
-    
-    subplot(2,2,3);
-    dn2= 'Energy Deposited in Material';
-    histogram(Eabs,100,'Normalization','pdf','DisplayName',dn2);
-    h2 = fitdist(Eabs,'normal');
-    legend();
+    figure(2);
+    dn2 = 'Energy Deposited in Gap';
+    histogram(Egap,100,'DisplayName',dn2);
     xlabel('Energy (MeV)');
     grid on;
-    subplot(2,2,4);
-    histogram(Labs,100,'DisplayName','Material');
-    %h4 = fitdist(Labs,'normal');
-    %set(gca,'YScale','log');
+    figure(3);
+    dn3 = 'Track Length in gap';
+    h3 = histogram(Lgap,100,'DisplayName',dn3);
+    xlabel('Track Length (mm)','FontSize',16);
     legend();
     grid on;
-    xlabel('Track length (cm)');
+    
+    
+    figure(4);
+    dn4= 'Track Length in Material';
+    histogram(Labs,100,'DisplayName',dn4);
+    
+    legend();
+    xlabel('Track Length (mm)','FontSize',16);
+    grid on;
+    
+    legend();
+    grid on;
+    
     
     
    

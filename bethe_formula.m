@@ -1,0 +1,10 @@
+% Electron density
+NA=6.023E23;
+z=13;
+rho= 2.700; %g/cm^3
+A = 26.982; % Atomic mass
+me = 9.1E-31;
+ec = 1.6E-19;
+n = NA*z*rho/A;
+
+consts = 4*pi*n*z^2*ec^4*9e9^2/me*c^2*beta^2;

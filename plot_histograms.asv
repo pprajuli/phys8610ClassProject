@@ -7,22 +7,17 @@ function [Egap] = plot_histograms(filename)
     Eabs_mean = mean(Eabs);
     
     figure(1);
-    subplot(2,2,1);
+    %subplot(2,2,1);
     dn1 = 'Energy Deposited in Gap';
-    histogram(Egap,100,'DisplayName',dn1);
-    hold on;
-    fit_normal_distribution(Egap);
+    h = histogram(Eabs,100,'DisplayName',dn1);
     
-    h1 = fitdist(Egap,'normal');
-    y
     xlabel('Energy (MeV)');
     legend();
     grid on;
    
-    hold off;
-    
-    subplot(2,2,2);
-     histogram(Lgap,100,'DisplayName','Gap');
+    figure(2);
+    dn2 = 'Energy Deposited in Gap
+    histogram(Egap,100,'DisplayName','Gap');
     
     h3 = fitdist(Lgap,'normal');
     xlabel('Track Length (cm)');
