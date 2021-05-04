@@ -1,4 +1,5 @@
 % Electron density
+% Needed if I worked on stopping power for doing a f
 NA=6.023E23;
 z=13;
 rho= 2.700; %g/cm^3
